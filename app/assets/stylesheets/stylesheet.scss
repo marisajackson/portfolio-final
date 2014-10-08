@@ -1,0 +1,37 @@
+@import "foundation/components/grid";
+@import "foundation/components/block-grid";
+
+body { 
+  @include grid-row(); 
+  ul { list-style-type: none };
+}
+
+header {
+  text-align: center;
+  h1 { margin-bottom: 1px }
+  li { display: inline-block }
+  li:nth-child(2) { margin: 0 5% 0 5% }
+}
+
+#about-image, #about-info {
+  @include grid-column(6);
+}
+
+@media #{$medium-up} {
+  .project-index { @include block-grid(2) }
+}
+
+@media #{$small-only} {
+  .project-index { @extend .small-block-grid-1 }
+}
+
+ul.project-index li {
+  height: 407px;
+}
+
+.project {
+  border: 3px solid black;
+  height: 100%;
+  text-align: center;
+  img { max-height: 100% }
+}
